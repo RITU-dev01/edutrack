@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Education Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#" data-page="home">
+            EduTrack
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- PUBLIC NAVBAR -->
+            <div class="navbar-nav ms-auto" id="publicNav">
+                <a class="nav-link" href="#" data-page="home">Home</a>
+                <a class="nav-link" href="#" data-page="login">Login</a>
+                <a class="nav-link" href="#" data-page="register">Register</a>
+            </div>
+
+            <!-- PRIVATE NAVBAR -->
+            <div class="navbar-nav ms-auto d-none" id="privateNav">
+                <a class="nav-link" href="#" data-page="dashboard">Dashboard</a>
+                <a class="nav-link" href="#" data-page="courses">Courses</a>
+                <a class="nav-link" href="#" data-page="attendance">Attendance</a>
+                <a class="nav-link" href="#" data-page="assignments">Assignments</a>
+                <a class="nav-link" href="#" data-page="results">Results</a>
+                <a class="nav-link" href="#" data-page="profile">Profile</a>
+                <a class="nav-link d-none" href="#" id="adminNav" data-page="admin">Admin</a>
+                <a class="nav-link" href="#" id="topLogout">Logout</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- HOME -->
+<section id="home" class="section">
+    <div class="hero container text-center">
+        <h1>Welcome to EduTrack</h1>
+        <h3>Smart Education Management System</h3>
+        <p>Manage students, courses, attendance and academic performance.</p>
+        <button class="btn btn-primary btn-lg" data-page="login">
+            Get Started
+        </button>
+    </div>
+
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>📚 Courses</h4>
+                    <p>Explore and manage academic courses.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>📊 Attendance</h4>
+                    <p>Track your attendance records.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>🏆 Results</h4>
+                    <p>View academic marks and grades.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section d-none">
+    <div class="form-box">
+        <h2 class="text-center mb-4">Login</h2>
+
+        <form id="loginForm">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" class="form-control mb-3" required>
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" class="form-control mb-3" required>
+
+            <button class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <p id="loginMessage" class="message"></p>
+
+        <p class="text-center mt-3">
+            Don't have an account?
+            <a href="#" data-page="register">Register here</a>
+        </p>
+    </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="section d-none">
+    <div class="form-box">
+        <h2 class="text-center mb-4">Student Registration</h2>
+
+        <form id="registerForm">
+            <label>Full Name</label>
+            <input type="text" id="regName" class="form-control mb-3" required>
+
+            <label>Email Address</label>
+            <input type="email" id="regEmail" class="form-control mb-3" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="regPhone" class="form-control mb-3"
+                pattern="[0-9]{10}" maxlength="10" required>
+
+            <label>Password</label>
+            <input type="password" id="regPassword" class="form-control mb-3"
+                minlength="8" required>
+
+            <button class="btn btn-primary w-100">Create Account</button>
+        </form>
+
+        <p id="registerMessage" class="message"></p>
+    </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section d-none">
+    <div class="container-fluid">
+        <div class="row">
+
+            <aside class="col-md-3 col-lg-2 sidebar">
+                <h4>EduTrack</h4>
+                <a href="#" data-page="dashboard">Dashboard</a>
+                <a href="#" data-page="courses">Courses</a>
+                <a href="#" data-page="attendance">Attendance</a>
+                <a href="#" data-page="assignments">Assignments</a>
+                <a href="#" data-page="results">Results</a>
+                <a href="#" data-page="profile">My Profile</a>
+                <a href="#" id="adminLink" data-page="admin" class="d-none">Admin Panel</a>
+                <a href="#" id="logoutButton">Logout</a>
+            </aside>
+
+            <main class="col-md-9 col-lg-10 p-4">
+                <h2>Dashboard</h2>
+                <p>Welcome, <strong id="welcomeName">Student</strong>!</p>
+
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h5>Total Courses</h5>
+                            <h2 id="courseCount">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h5>Assignments</h5>
+                            <h2 id="assignmentCount">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h5>Attendance</h5>
+                            <h2 id="attendancePercent">0%</h2>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="section d-none">
+    <div class="container py-5">
+        <h2>Available Courses</h2>
+        <div class="row g-3 mt-3" id="courseList"></div>
+    </div>
+</section>
+
+<!-- ATTENDANCE -->
+<section id="attendance" class="section d-none">
+    <div class="container py-5">
+        <h2>Attendance Details</h2>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Total Classes</th>
+                        <th>Present</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceList"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ASSIGNMENTS -->
+<section id="assignments" class="section d-none">
+    <div class="container py-5">
+        <h2>Assignments</h2>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Assignment</th>
+                        <th>Subject</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody id="assignmentList"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="section d-none">
+    <div class="container py-5">
+        <h2>Academic Results</h2>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="resultList"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="section d-none">
+    <div class="container py-5">
+        <h2>My Profile</h2>
+
+        <div class="dashboard-card mt-4">
+            <p><b>Name:</b> <span id="profileName"></span></p>
+            <p><b>Email:</b> <span id="profileEmail"></span></p>
+            <p><b>Phone:</b> <span id="profilePhone"></span></p>
+            <p><b>Role:</b> <span id="profileRole"></span></p>
+        </div>
+    </div>
+</section>
+
+<!-- ADMIN PANEL -->
+<section id="admin" class="section d-none">
+    <div class="container py-5">
+        <h2>Admin Panel</h2>
+        <p>Manage courses and assignments.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="form-box">
+                    <h4>Add Course</h4>
+                    <form id="courseForm">
+                        <input id="courseTitle" class="form-control mb-3"
+                            placeholder="Course Name" required>
+                        <textarea id="courseDescription" class="form-control mb-3"
+                            placeholder="Course Description" required></textarea>
+                        <button class="btn btn-primary w-100">Add Course</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-box">
+                    <h4>Add Assignment</h4>
+                    <form id="assignmentForm">
+                        <input id="assignmentTitle" class="form-control mb-3"
+                            placeholder="Assignment Name" required>
+                        <input id="assignmentSubject" class="form-control mb-3"
+                            placeholder="Subject" required>
+                        <input id="assignmentDate" type="date"
+                            class="form-control mb-3" required>
+                        <button class="btn btn-primary w-100">Add Assignment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <p id="adminMessage" class="message"></p>
+    </div>
+</section>
+
+<footer class="text-center py-3">
+    <p>© 2026 EduTrack | Smart Education Management System</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

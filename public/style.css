@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    color: #26344a;
+}
+
+.navbar {
+    background: #155eef !important;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+.hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(135deg, #eaf2ff, #ffffff);
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.hero h1 {
+    color: #155eef;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h3 {
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #65758b;
+    font-size: 17px;
+}
+
+.feature-card,
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    height: 100%;
+}
+
+.feature-card {
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h4 {
+    color: #155eef;
+    margin-bottom: 15px;
+}
+
+.form-box {
+    background: white;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-box h2,
+.form-box h4 {
+    color: #155eef;
+}
+
+.form-control {
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: #155eef;
+    box-shadow: 0 0 5px rgba(21, 94, 239, 0.2);
+}
+
+.btn-primary {
+    background: #155eef;
+    border: none;
+    padding: 11px;
+}
+
+.btn-primary:hover {
+    background: #0c43bd;
+}
+
+.sidebar {
+    background: #102a56;
+    min-height: 85vh;
+    padding: 25px 15px;
+}
+
+.sidebar h4 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #dce7ff;
+    padding: 13px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+}
+
+.sidebar a:hover {
+    background: #155eef;
+    color: white;
+}
+
+.dashboard-card h5 {
+    color: #65758b;
+}
+
+.dashboard-card h2 {
+    color: #155eef;
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.table {
+    background: white;
+}
+
+.table th {
+    color: #102a56;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background: #102a56;
+    color: white;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+
+    .form-box {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+}
